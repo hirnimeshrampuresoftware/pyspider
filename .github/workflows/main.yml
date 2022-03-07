@@ -28,6 +28,7 @@ jobs:
           CIBW_ARCHS: ${{matrix.arch}}
           CIBW_BUILD: cp3*
           CIBW_SKIP: '*-musllinux*'
+          CIBW_BEFORE_ALL: yum install -y libcurl-devel
           CIBW_BEFORE_BUILD: pip install -r requirements.txt
           CIBW_BUILD_VERBOSITY: 1
         run: |
