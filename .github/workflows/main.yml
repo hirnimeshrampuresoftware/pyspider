@@ -29,6 +29,7 @@ jobs:
           CIBW_BUILD: cp3*
           CIBW_SKIP: '*-musllinux*'
           CIBW_BEFORE_BUILD: pip install cython
+          CIBW_BUILD_VERBOSITY: 1
         run: |
           python -m pip install --upgrade pip setuptools
           pip install cibuildwheel
