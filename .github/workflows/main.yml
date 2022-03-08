@@ -20,5 +20,5 @@ jobs:
     - name: Build Wheel
       run: |
         sudo apt-get update
-        sudo apt-get install -y libcurl-dev
+        sudo apt install libcurl4-openssl-dev libssl-dev
         pip wheel -w DEST_DIR .
