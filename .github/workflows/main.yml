@@ -19,10 +19,6 @@ jobs:
         python-version: 3.8   
     - name: Build Wheel
       run: |
-        python -m pip install --upgrade pip setuptools cython
-        rm -rf /tmp/cibuildwheel/built_wheel
-        mkdir -p /tmp/cibuildwheel/built_wheel
-        python -m pip wheel . --wheel-dir=/tmp/cibuildwheel/built_wheel --no-deps -v
-        #sudo apt-get update
-        #sudo apt install libcurl4-openssl-dev libssl-dev
-        #pip wheel -w DEST_DIR .
+            docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
+            quay.io/pypa/manylinux2014_x86_64 \
+            bash -exc /opt/python/cp38-cp38/bin/python setup.py bdist_wheel
