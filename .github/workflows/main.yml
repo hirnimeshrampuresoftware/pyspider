@@ -18,4 +18,4 @@ jobs:
       with:
         python-version: 3.x    
     - name: Build Wheel
-      run: python -m pip wheel . --no-deps
+      run: python -m build -n -s -w .
