@@ -18,8 +18,8 @@ jobs:
             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
             quay.io/pypa/manylinux2014_x86_64 \
             bash -exc '/opt/python/cp38-cp38/bin/python setup.py bdist_wheel'
-    - name: Upload packages
+    - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
-        user: __token__
-        password: ${{ secrets.pypi_password }}            
+        user: ${{ secrets.PYPI_USERNAME }}
+        password: ${{ secrets.PYPI_PASSWORD }}
