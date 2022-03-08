@@ -18,4 +18,4 @@ jobs:
       with:
         python-version: 3.x    
     - name: Build Wheel
-      run: pip wheel -w DEST_DIR .
+      run: python setup.py bdist_wheel
