@@ -21,7 +21,7 @@ jobs:
       run: |
         rm -rf /tmp/cibuildwheel/built_wheel
         mkdir -p /tmp/cibuildwheel/built_wheel
-        python -m pip wheel /project --wheel-dir=/tmp/cibuildwheel/built_wheel --no-deps -v
+        python -m pip wheel . --wheel-dir=/tmp/cibuildwheel/built_wheel --no-deps -v
         #sudo apt-get update
         #sudo apt install libcurl4-openssl-dev libssl-dev
         #pip wheel -w DEST_DIR .
